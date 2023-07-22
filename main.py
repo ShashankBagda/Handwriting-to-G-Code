@@ -1,5 +1,6 @@
 import cv2
 import os
+import subprocess
 
 def detect_and_crop_boxes(image_path, output_folder, square_size):
     # Load the image
@@ -57,8 +58,9 @@ def detect_and_crop_boxes(image_path, output_folder, square_size):
         cropped_box = cv2.resize(cropped_box, (square_size, square_size))
 
         # Save the cropped box as a separate image
-        output_path = os.path.join(output_folder, f'box_{i}.png')
-        cv2.imwrite(output_path, cropped_box)
+        if i < 93:
+            output_path = os.path.join(output_folder, f'box_{i}.png')
+            cv2.imwrite(output_path, cropped_box)
 
 # Example usage
 image_path = 'image.png'
@@ -66,3 +68,5 @@ output_folder = 'Images'
 square_size = 100  # Specify the desired square size in pixels
 
 detect_and_crop_boxes(image_path, output_folder, square_size)
+
+subprocess.run(['python', 'removebg.py'])
