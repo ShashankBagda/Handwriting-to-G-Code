@@ -1,44 +1,30 @@
-import os
-from PIL import Image
-from fontTools.ttLib import TTFont, TTLibError
+import fontforge
 
-# Define font properties
-font_size = 48
-output_font_path = "output.ttf"
-images_folder = "Images"
+# Function to create a new glyph in the font
+def create_glyph(font, glyph_name, png_file):
+    glyph = font.createChar(-1, glyph_name)  # Create a new glyph with a given name
+    glyph.importOutlines(png_file)  # Import the outlines from the PNG file
 
-def convert_png_to_ttf(images_folder, output_font_path):
-    # Get all the PNG files in the specified folder
-    png_files = [os.path.join(images_folder, file) for file in os.listdir(images_folder) if file.lower().endswith(".png")]
+# Main function to create the font
+def create_font(png_files, output_ttf_file):
+    font = fontforge.font()  # Create a new empty font
 
-    # Create a blank TTF font
-    font = TTFont()
+    # Set font properties (e.g., fontname, familyname, etc.)
+    font.fontname = "MyHandwrittenFont"
+    font.familyname = "My Handwritten Font"
+    font.fullname = "My Handwritten Font Regular"
 
-    # Set the font properties
-    font.sfntVersion = 0x10000  # TrueType font version
-    font.numGlyphs = len(png_files)  # Number of glyphs in the font
+    for i, png_file in enumerate(png_files):
+        glyph_name = f"uni{10000 + i}"  # Create glyph names like "uni10001", "uni10002", ...
+        create_glyph(font, glyph_name, png_file)
 
-    # Loop through the PNG files and convert them into TTF glyphs
-    for index, png_file in enumerate(png_files):
-        # Open the PNG file
-        image = Image.open(png_file)
+    font.generate(output_ttf_file)  # Generate the final font file
 
-        # Resize the image to the desired font size
-        image = image.resize((font_size, font_size))
-
-        # Convert the image to a grayscale bitmap
-        image = image.convert("L")
-
-        # Convert the bitmap to a glyph and add it to the font
-        glyph = image.tobytes(), image.size, (1, 0, 0, 1), 0
-        font.setGlyph(str(index), glyph)
-
-    try:
-        # Save the TTF font to a file
-        font.save(output_font_path)
-        print("TTF font created successfully!")
-    except TTLibError as e:
-        print(f"An error occurred while saving the font: {e}")
-
-# Convert the PNG files to TTF
-convert_png_to_ttf(images_folder, output_font_path)
+if __name__ == "__main__":
+    png_files = [
+        "path/to/letter_a.png",
+        "path/to/letter_b.png",
+        # Add paths for other PNG files here
+    ]
+    output_ttf_file = "path/to/your/output/font.ttf"
+    create_font(png_files, output_ttf_file)

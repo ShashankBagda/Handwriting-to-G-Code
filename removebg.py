@@ -1,6 +1,7 @@
 from PIL import Image
 import os
 import subprocess
+import shutil
 
 def remove_white_background(image_path, output_path):
     image = Image.open(image_path)
@@ -39,4 +40,6 @@ output_folder = "Withoutbg"
 # Process the images in the input folder and save them to the output folder
 process_images_in_folder(input_folder, output_folder)
 
-subprocess.run(['python', 'png-svg.py'])
+shutil.rmtree(input_folder)
+
+# subprocess.run(['python3', 'png-svg.py'])

@@ -1,6 +1,7 @@
 import os
 import PIL.Image as Image
 import svgwrite
+import shutil
 
 def convert_image_to_svg(image_path, output_folder):
     # Load the image
@@ -40,3 +41,5 @@ image_files = [f for f in os.listdir(input_folder) if f.endswith(".png")]
 for image_file in image_files:
     image_path = os.path.join(input_folder, image_file)
     convert_image_to_svg(image_path, output_folder)
+
+shutil.rmtree(input_folder)

@@ -42,14 +42,12 @@ def detect_and_crop_boxes(image_path, output_folder, square_size):
         # Determine the size of the square region to crop
         size = min(w, h)
 
-        # Calculate the cropping region
-        x_center = x + w // 2
-        y_center = y + h // 2
-        half_size = size // 2
-        x_min = x_center - half_size
-        y_min = y_center - half_size
-        x_max = x_center + half_size
-        y_max = y_center + half_size
+        # Calculate the cropping region (modified to crop inside the detected contour)
+        padding = int(size * 0.1)  # 10% padding inside the square
+        x_min = x + padding
+        y_min = y + padding
+        x_max = x + w - padding
+        y_max = y + h - padding
 
         # Crop the square region from the original image
         cropped_box = image[y_min:y_max, x_min:x_max]
@@ -65,8 +63,8 @@ def detect_and_crop_boxes(image_path, output_folder, square_size):
 # Example usage
 image_path = 'image.png'
 output_folder = 'Images'
-square_size = 100  # Specify the desired square size in pixels
+square_size = 50  # Specify the desired square size in pixels
 
 detect_and_crop_boxes(image_path, output_folder, square_size)
 
-subprocess.run(['python', 'removebg.py'])
+subprocess.run(['python3', 'removebg.py'])
