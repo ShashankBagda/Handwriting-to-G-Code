@@ -21,5 +21,5 @@ for i, filename in enumerate(file_list):
         os.rename(old, new_al)
         j = j + 1
 
-    if not filename.lower().endswith(('.png', '.jpg', '.jpeg', '.gif', '.bmp')):
-        continue
+    # if not filename.lower().endswith(('.png', '.jpg', '.jpeg', '.gif', '.bmp')):
+    #     continue
