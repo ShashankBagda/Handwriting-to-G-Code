@@ -3,6 +3,7 @@ import os
 import subprocess
 
 def detect_and_crop_boxes(image_path, output_folder, square_size):
+    
     # Load the image
     image = cv2.imread(image_path)
     grayscale = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
