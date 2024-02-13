@@ -41,5 +41,3 @@ output_folder = "Withoutbg"
 process_images_in_folder(input_folder, output_folder)
 
 shutil.rmtree(input_folder)
-
-subprocess.run(['python3', 'rename.py'])
