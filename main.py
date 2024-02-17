@@ -73,3 +73,5 @@ detect_and_crop_boxes(image_path, output_folder, square_size)
 subprocess.run(['python3', 'removebg.py'])
 
 subprocess.run(['python3', 'rename.py'])
+
+subprocess.run(['python3', 'embedder.py'])

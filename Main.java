@@ -13,6 +13,7 @@ public class Main extends JFrame implements ActionListener {
     public Main() {
         setTitle("Main Frame");
         setLayout(new BorderLayout());
+        
 
         // Set background image
         setContentPane(new JLabel(new ImageIcon("Images/background.png")));
@@ -72,10 +73,17 @@ class ProcessFrame extends JFrame implements ActionListener {
         // Set background image
         setContentPane(new JLabel(new ImageIcon("Images/menu.png")));
 
-        // Create Process button
-        processButton = new JButton("Process");
+        // Create Process button with image
+        ImageIcon processIcon = new ImageIcon("Images/process.png");
+        processButton = new JButton(processIcon);
+        processButton.setBorderPainted(false);
+        processButton.setContentAreaFilled(false);
         processButton.addActionListener(this);
         processButton.setBounds(810, 820, 300, 105);
+
+        // Add Start button to the frame
+        // add(processButton, BorderLayout.CENTER);
+
 
         // Create Select button
         selectButton = new JButton("Select");
