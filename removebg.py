@@ -35,6 +35,6 @@ def process_images_in_folder(input_folder, output_folder):
 input_folder = "Images"
 output_folder = "Output"
 
-process_images_in_folder(input_folder, output_folder)
+process_images_in_folder(output_folder, output_folder)
 
-shutil.rmtree(input_folder)
+# shutil.rmtree(input_folder)

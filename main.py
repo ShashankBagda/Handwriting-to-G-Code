@@ -63,8 +63,11 @@ def detect_and_crop_boxes(image_path, output_folder, square_size):
             cv2.imwrite(output_path, cropped_box)
 
 # Driver Code
-shutil.rmtree("Output")
-image_path = 'Image.png'
+try: 
+    shutil.rmtree("Output")
+except:
+    print("Could not find output folder")
+image_path = 'hand_Image.jpg'
 output_folder = 'Images'
 square_size = 50  # Specify the desired square size in pixels
 
@@ -74,4 +77,4 @@ subprocess.run(['python3', 'removebg.py'])
 
 subprocess.run(['python3', 'rename.py'])
 
-subprocess.run(['python3', 'embedder.py'])
+# subprocess.run(['python3', 'embedder.py'])
