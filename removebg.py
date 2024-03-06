@@ -32,9 +32,10 @@ def process_images_in_folder(input_folder, output_folder):
             output_path = os.path.join(output_folder, filename)
             remove_white_background(input_path, output_path)
 
-input_folder = "Images"
-output_folder = "Output"
+input_folder = "Output"
+output_folder = input_folder
 
 process_images_in_folder(output_folder, output_folder)
 
+print("Background Removed Successfully...")
 # shutil.rmtree(input_folder)

@@ -16,10 +16,10 @@ public class Main extends JFrame implements ActionListener {
         
 
         // Set background image
-        setContentPane(new JLabel(new ImageIcon("Images/background.png")));
+        setContentPane(new JLabel(new ImageIcon("Graphics/background.png")));
 
         // Create Start button with image
-        ImageIcon startIcon = new ImageIcon("Images/start.png");
+        ImageIcon startIcon = new ImageIcon("Graphics/start.png");
         startButton = new JButton(startIcon);
         startButton.setBorderPainted(false);
         startButton.setContentAreaFilled(false);
@@ -42,7 +42,7 @@ public class Main extends JFrame implements ActionListener {
             public void componentResized(ComponentEvent e) {
                 super.componentResized(e);
                 JLabel label = (JLabel) getContentPane();
-                label.setIcon(new ImageIcon(new ImageIcon("Images/background.png").getImage().getScaledInstance(getWidth(), getHeight(), Image.SCALE_SMOOTH)));
+                label.setIcon(new ImageIcon(new ImageIcon("Graphics/background.png").getImage().getScaledInstance(getWidth(), getHeight(), Image.SCALE_SMOOTH)));
             }
         });
     }
@@ -71,10 +71,10 @@ class ProcessFrame extends JFrame implements ActionListener {
         setLayout(new BorderLayout());
 
         // Set background image
-        setContentPane(new JLabel(new ImageIcon("Images/menu.png")));
+        setContentPane(new JLabel(new ImageIcon("Graphics/menu.png")));
 
         // Create Process button with image
-        ImageIcon processIcon = new ImageIcon("Images/process.png");
+        ImageIcon processIcon = new ImageIcon("Graphics/process.png");
         processButton = new JButton(processIcon);
         processButton.setBorderPainted(false);
         processButton.setContentAreaFilled(false);
@@ -121,7 +121,7 @@ class ProcessFrame extends JFrame implements ActionListener {
             public void componentResized(ComponentEvent e) {
                 super.componentResized(e);
                 JLabel label = (JLabel) getContentPane();
-                label.setIcon(new ImageIcon(new ImageIcon("Images/menu.png").getImage().getScaledInstance(getWidth(), getHeight(), Image.SCALE_SMOOTH)));
+                label.setIcon(new ImageIcon(new ImageIcon("Graphics/menu.png").getImage().getScaledInstance(getWidth(), getHeight(), Image.SCALE_SMOOTH)));
             }
         });
     }
