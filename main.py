@@ -5,6 +5,8 @@ import subprocess
 import shutil
 import time
 
+border_width = 3
+
 def delete_files_in_folder(folder_path):
     try:
         # List all files in the specified folder
@@ -43,27 +45,25 @@ def extract_and_save_squares(image_path, border_margin=5):
         # Add margin to remove the border
         x += border_margin
         y += border_margin
-        w -= 2 * border_margin
-        h -= 2 * border_margin
+        w -= border_width * border_margin
+        h -= border_width * border_margin
         square_img = image[y:y+h, x:x+w]
         cv2.imwrite(f'Output/box_{i}.png', square_img)
 
+def get_image_path_from_file(file_path):
+    try:
+        with open(file_path, 'r') as file:
+            image_path = file.readline().strip()
+            return image_path
+    except FileNotFoundError:
+        print(f"File '{file_path}' not found.")
+        return None
 
 if __name__ == "__main__":
 
     folder_path = "Output" 
     delete_files_in_folder(folder_path)
 
-    image_path = 'digital.png'
+    image_path = get_image_path_from_file('image_path.txt')
     extract_and_save_squares(image_path)
-
     print("Images Extracted Successfully...")
-    time.sleep(3)
-    
-    subprocess.run(['python3', 'removebg.py'])
-    time.sleep(3)
-
-    subprocess.run(['python3', 'rename.py'])
-    time.sleep(3)
-
-    # subprocess.run(['python3', 'embedder.py'])
