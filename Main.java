@@ -11,8 +11,8 @@ import javax.swing.filechooser.FileNameExtensionFilter;
 
 
 public class Main extends JFrame implements ActionListener {
-    private JButton startButton;
-    private JFrame processFrame;
+    private JButton createNew, existingButton;
+    private JFrame processFrame, existingFrame;
 
     public Main() {
         setTitle("Main Frame");
@@ -22,15 +22,23 @@ public class Main extends JFrame implements ActionListener {
         // Set background image
         setContentPane(new JLabel(new ImageIcon("Graphics/background.png")));
 
-        // // Create Start button with image
-        startButton = new JButton();
-        startButton.setBorderPainted(true);
-        startButton.setContentAreaFilled(false);
-        startButton.addActionListener(this);
-        startButton.setBounds(810, 860, 300, 100);
-
+        // Create Create New button with image
+        createNew = new JButton();
+        createNew.setBorderPainted(true);
+        createNew.setContentAreaFilled(false);
+        createNew.addActionListener(this);
+        createNew.setBounds(560, 860, 300, 100);
         // Add Start button to the frame
-        add(startButton, BorderLayout.CENTER);
+        add(createNew, BorderLayout.CENTER);
+
+        // Create Existing button with image
+        existingButton = new JButton();
+        existingButton.setBorderPainted(true);
+        existingButton.setContentAreaFilled(false);
+        existingButton.addActionListener(this);
+        existingButton.setBounds(1060, 860, 300, 100);
+        // Add Start button to the frame
+        add(existingButton, BorderLayout.CENTER);
 
         // Maximize the frame by default
         setExtendedState(JFrame.MAXIMIZED_BOTH);
@@ -38,6 +46,7 @@ public class Main extends JFrame implements ActionListener {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
         setVisible(true);
+        setResizable(false);
 
         // Add ComponentListener to adjust background image on resize
         addComponentListener(new ComponentAdapter() {
@@ -51,15 +60,56 @@ public class Main extends JFrame implements ActionListener {
     }
 
     public void actionPerformed(ActionEvent e) {
-        if (e.getSource() == startButton) {
+        if (e.getSource() == createNew) {
             processFrame = new ProcessFrame();
             processFrame.setVisible(true);
+            dispose(); // Close Main Frame
+        }
+        if (e.getSource() == existingButton) {
+            existingFrame = new existingFrame();
+            existingFrame.setVisible(true);
             dispose(); // Close Main Frame
         }
     }
 
     public static void main(String[] args) {
         new Main();
+    }
+}
+
+class existingFrame extends JFrame implements ActionListener
+{
+    public existingFrame()
+    {
+        setTitle("Existing Data Frame");
+        setLayout(new BorderLayout());
+        // setResizable(false);
+        // setUndecorated(true);
+
+        // Set background image
+        setContentPane(new JLabel(new ImageIcon("Graphics/menu.png")));
+
+        // Maximize the frame by default
+        setExtendedState(JFrame.MAXIMIZED_BOTH);
+
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setLocationRelativeTo(null);
+        setVisible(true);
+
+        addComponentListener(new ComponentAdapter() {
+            @Override
+            public void componentResized(ComponentEvent e) {
+                super.componentResized(e);
+                JLabel label = (JLabel) getContentPane();
+                label.setIcon(new ImageIcon(new ImageIcon("Graphics/menu.png").getImage().getScaledInstance(getWidth(), getHeight(), Image.SCALE_SMOOTH)));
+            }
+        });
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'actionPerformed'");
     }
 }
 
@@ -79,6 +129,8 @@ class ProcessFrame extends JFrame implements ActionListener {
     public ProcessFrame() {
         setTitle("Process Frame");
         setLayout(new BorderLayout());
+        // setResizable(false);
+        // setUndecorated(true);
 
         // Set background image
         setContentPane(new JLabel(new ImageIcon("Graphics/menu.png")));
@@ -821,7 +873,7 @@ class ProcessFrame extends JFrame implements ActionListener {
             publish(0);
             Thread.sleep(1000);
     
-            executePythonScript("main.py");
+            executePythonScript("extractor.py");
             publish(25);
             Thread.sleep(1000);
     
