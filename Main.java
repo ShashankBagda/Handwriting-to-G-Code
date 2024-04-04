@@ -108,7 +108,6 @@ class existingFrame extends JFrame implements ActionListener
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'actionPerformed'");
     }
 }
@@ -941,371 +940,462 @@ class ProcessFrame extends JFrame implements ActionListener {
                 case "_A":
                     _A.setIcon(new ImageIcon(image));
                     _A.setOpaque(true);
+                    _A.setBackground(Color.decode("#D9D9D9"));
                     break;
                 case "_B":
                     _B.setIcon(new ImageIcon(image));
                     _B.setOpaque(true);
+                    _B.setBackground(Color.decode("#D9D9D9"));
                     break;
                 case "_C":
                     _C.setIcon(new ImageIcon(image));
                     _C.setOpaque(true);
+                    _C.setBackground(Color.decode("#D9D9D9"));
                     break;
                 case "_D":
                     _D.setIcon(new ImageIcon(image));
                     _D.setOpaque(true);
+                    _D.setBackground(Color.decode("#D9D9D9"));
                     break;
                 case "_E":
                     _E.setIcon(new ImageIcon(image));
                     _E.setOpaque(true);
+                    _E.setBackground(Color.decode("#D9D9D9"));
                     break;
                 case "_F":
                     _F.setIcon(new ImageIcon(image));
                     _F.setOpaque(true);
+                    _F.setBackground(Color.decode("#D9D9D9"));
                     break;
                 case "_G":
                     _G.setIcon(new ImageIcon(image));
                     _G.setOpaque(true);
+                    _G.setBackground(Color.decode("#D9D9D9"));
                     break;
                 case "_H":
                     _H.setIcon(new ImageIcon(image));
                     _H.setOpaque(true);
+                    _H.setBackground(Color.decode("#D9D9D9"));
                     break;
                 case "_I":
                     _I.setIcon(new ImageIcon(image));
                     _I.setOpaque(true);
+                    _I.setBackground(Color.decode("#D9D9D9"));
                     break;
                 case "_J":
                     _J.setIcon(new ImageIcon(image));
                     _J.setOpaque(true);
+                    _J.setBackground(Color.decode("#D9D9D9"));
                     break;
                 case "_K":
                     _K.setIcon(new ImageIcon(image));
                     _K.setOpaque(true);
+                    _K.setBackground(Color.decode("#D9D9D9"));
                     break;
                 case "_L":
                     _L.setIcon(new ImageIcon(image));
                     _L.setOpaque(true);
+                    _L.setBackground(Color.decode("#D9D9D9"));
                     break;
                 case "_M":
                     _M.setIcon(new ImageIcon(image));
                     _M.setOpaque(true);
+                    _M.setBackground(Color.decode("#D9D9D9"));
                     break;
                 case "_N":
                     _N.setIcon(new ImageIcon(image));
                     _N.setOpaque(true);
+                    _N.setBackground(Color.decode("#D9D9D9"));
                     break;
                 case "_O":
                     _O.setIcon(new ImageIcon(image));
                     _O.setOpaque(true);
+                    _O.setBackground(Color.decode("#D9D9D9"));
                     break;
                 case "_P":
                     _P.setIcon(new ImageIcon(image));
                     _P.setOpaque(true);
+                    _P.setBackground(Color.decode("#D9D9D9"));
                     break;
                 case "_Q":
                     _Q.setIcon(new ImageIcon(image));
                     _Q.setOpaque(true);
+                    _Q.setBackground(Color.decode("#D9D9D9"));
                     break;
                 case "_R":
                     _R.setIcon(new ImageIcon(image));
                     _R.setOpaque(true);
+                    _R.setBackground(Color.decode("#D9D9D9"));
                     break;
                 case "_S":
                     _S.setIcon(new ImageIcon(image));
                     _S.setOpaque(true);
+                    _S.setBackground(Color.decode("#D9D9D9"));
                     break;
                 case "_T":
                     _T.setIcon(new ImageIcon(image));
                     _T.setOpaque(true);
+                    _T.setBackground(Color.decode("#D9D9D9"));
                     break;
                 case "_U":
                     _U.setIcon(new ImageIcon(image));
                     _U.setOpaque(true);
+                    _U.setBackground(Color.decode("#D9D9D9"));
                     break;
                 case "_V":
                     _V.setIcon(new ImageIcon(image));
                     _V.setOpaque(true);
+                    _V.setBackground(Color.decode("#D9D9D9"));
                     break;
                 case "_W":
                     _W.setIcon(new ImageIcon(image));
                     _W.setOpaque(true);
+                    _W.setBackground(Color.decode("#D9D9D9"));
                     break;
                 case "_X":
                     _X.setIcon(new ImageIcon(image));
                     _X.setOpaque(true);
+                    _X.setBackground(Color.decode("#D9D9D9"));
                     break;
                 case "_Y":
                     _Y.setIcon(new ImageIcon(image));
                     _Y.setOpaque(true);
+                    _Y.setBackground(Color.decode("#D9D9D9"));
                     break;
                 case "_Z":
                     _Z.setIcon(new ImageIcon(image));
                     _Z.setOpaque(true);
+                    _Z.setBackground(Color.decode("#D9D9D9"));
                     break;
                 case "a":
                     a.setIcon(new ImageIcon(image));
                     a.setOpaque(true);
+                    a.setBackground(Color.decode("#D9D9D9"));
                     break;
                 case "b":
                     b.setIcon(new ImageIcon(image));
                     b.setOpaque(true);
+                    b.setBackground(Color.decode("#D9D9D9"));
                     break;
                 case "c":
                     c.setIcon(new ImageIcon(image));
                     c.setOpaque(true);
+                    c.setBackground(Color.decode("#D9D9D9"));
                     break;
                 case "d":
                     d.setIcon(new ImageIcon(image));
                     d.setOpaque(true);
+                    d.setBackground(Color.decode("#D9D9D9"));
                     break;
                 case "e":
                     e.setIcon(new ImageIcon(image));
                     e.setOpaque(true);
+                    e.setBackground(Color.decode("#D9D9D9"));
                     break;
                 case "f":
                     f.setIcon(new ImageIcon(image));
                     f.setOpaque(true);
+                    f.setBackground(Color.decode("#D9D9D9"));
                     break;
                 case "g":
                     g.setIcon(new ImageIcon(image));
                     g.setOpaque(true);
+                    g.setBackground(Color.decode("#D9D9D9"));
                     break;
                 case "h":
                     h.setIcon(new ImageIcon(image));
                     h.setOpaque(true);
+                    h.setBackground(Color.decode("#D9D9D9"));
                     break;
                 case "i":
                     i.setIcon(new ImageIcon(image));
                     i.setOpaque(true);
+                    i.setBackground(Color.decode("#D9D9D9"));
                     break;
                 case "j":
                     j.setIcon(new ImageIcon(image));
                     j.setOpaque(true);
+                    j.setBackground(Color.decode("#D9D9D9"));
                     break;
                 case "k":
                     k.setIcon(new ImageIcon(image));
                     k.setOpaque(true);
+                    k.setBackground(Color.decode("#D9D9D9"));
                     break;
                 case "l":
                     l.setIcon(new ImageIcon(image));
                     l.setOpaque(true);
+                    l.setBackground(Color.decode("#D9D9D9"));
                     break;
                 case "m":
                     m.setIcon(new ImageIcon(image));
                     m.setOpaque(true);
+                    m.setBackground(Color.decode("#D9D9D9"));
                     break;
                 case "n":
                     n.setIcon(new ImageIcon(image));
                     n.setOpaque(true);
+                    n.setBackground(Color.decode("#D9D9D9"));
                     break;
                 case "o":
                     o.setIcon(new ImageIcon(image));
                     o.setOpaque(true);
+                    o.setBackground(Color.decode("#D9D9D9"));
                     break;
                 case "p":
                     p.setIcon(new ImageIcon(image));
                     p.setOpaque(true);
+                    p.setBackground(Color.decode("#D9D9D9"));
                     break;
                 case "q":
                     q.setIcon(new ImageIcon(image));
                     q.setOpaque(true);
+                    q.setBackground(Color.decode("#D9D9D9"));
                     break;
                 case "r":
                     r.setIcon(new ImageIcon(image));
                     r.setOpaque(true);
+                    r.setBackground(Color.decode("#D9D9D9"));
                     break;
                 case "s":
                     s.setIcon(new ImageIcon(image));
                     s.setOpaque(true);
+                    s.setBackground(Color.decode("#D9D9D9"));
                     break;
                 case "t":
                     t.setIcon(new ImageIcon(image));
                     t.setOpaque(true);
+                    t.setBackground(Color.decode("#D9D9D9"));
                     break;
                 case "u":
                     u.setIcon(new ImageIcon(image));
                     u.setOpaque(true);
+                    u.setBackground(Color.decode("#D9D9D9"));
                     break;
                 case "v":
                     v.setIcon(new ImageIcon(image));
                     v.setOpaque(true);
+                    v.setBackground(Color.decode("#D9D9D9"));
                     break;
                 case "w":
                     w.setIcon(new ImageIcon(image));
                     w.setOpaque(true);
+                    w.setBackground(Color.decode("#D9D9D9"));
                     break;
                 case "x":
                     x.setIcon(new ImageIcon(image));
                     x.setOpaque(true);
+                    x.setBackground(Color.decode("#D9D9D9"));
                     break;
                 case "y":
                     y.setIcon(new ImageIcon(image));
                     y.setOpaque(true);
+                    y.setBackground(Color.decode("#D9D9D9"));
                     break;
                 case "z":
                     z.setIcon(new ImageIcon(image));
                     z.setOpaque(true);
+                    z.setBackground(Color.decode("#D9D9D9"));
                     break;
                 case "_full_stop":
                     _full_stop.setIcon(new ImageIcon(image));
                     _full_stop.setOpaque(true);
+                    _full_stop.setBackground(Color.decode("#D9D9D9"));
                     break;
                 case "_double_InComma":
                     _double_InComma.setIcon(new ImageIcon(image));
                     _double_InComma.setOpaque(true);
+                    _double_InComma.setBackground(Color.decode("#D9D9D9"));
                     break;
                 case "_underscore":
                     _underscore.setIcon(new ImageIcon(image));
                     _underscore.setOpaque(true);
+                    _underscore.setBackground(Color.decode("#D9D9D9"));
                     break;
                 case "_equals":
                     _equals.setIcon(new ImageIcon(image));
                     _equals.setOpaque(true);
+                    _equals.setBackground(Color.decode("#D9D9D9"));
                     break;
                 case "_addition":
                     _addition.setIcon(new ImageIcon(image));
                     _addition.setOpaque(true);
+                    _addition.setBackground(Color.decode("#D9D9D9"));
                     break;
                 case "_substraction":
                     _substraction.setIcon(new ImageIcon(image));
                     _substraction.setOpaque(true);
+                    _substraction.setBackground(Color.decode("#D9D9D9"));
                     break;
                 case "_brac_curl_end":
                     _brac_curl_end.setIcon(new ImageIcon(image));
                     _brac_curl_end.setOpaque(true);
+                    _brac_curl_end.setBackground(Color.decode("#D9D9D9"));
                     break;
                 case "_brac_curl_start":
                     _brac_curl_start.setIcon(new ImageIcon(image));
                     _brac_curl_start.setOpaque(true);
+                    _brac_curl_start.setBackground(Color.decode("#D9D9D9"));
                     break;
                 case "_brac_square_end":
                     _brac_square_end.setIcon(new ImageIcon(image));
                     _brac_square_end.setOpaque(true);
+                    _brac_square_end.setBackground(Color.decode("#D9D9D9"));
                     break;
                 case "_brac_square_start":
                     _brac_square_start.setIcon(new ImageIcon(image));
                     _brac_square_start.setOpaque(true);
+                    _brac_square_start.setBackground(Color.decode("#D9D9D9"));
                     break;
                 case "_multiplication":
                     _multiplication.setIcon(new ImageIcon(image));
                     _multiplication.setOpaque(true);
+                    _multiplication.setBackground(Color.decode("#D9D9D9"));
                     break;
                 case "_hashtag":
                     _hashtag.setIcon(new ImageIcon(image));
                     _hashtag.setOpaque(true);
+                    _hashtag.setBackground(Color.decode("#D9D9D9"));
                     break;
                 case "_and":
                     _and.setIcon(new ImageIcon(image));
                     _and.setOpaque(true);
+                    _and.setBackground(Color.decode("#D9D9D9"));
                     break;
                
                     case "_percentage":
                     _percentage.setIcon(new ImageIcon(image));
                     _percentage.setOpaque(true);
+                    _percentage.setBackground(Color.decode("#D9D9D9"));
                     break;
                 case "_dollar":
                     _dollar.setIcon(new ImageIcon(image));
                     _dollar.setOpaque(true);
+                    _dollar.setBackground(Color.decode("#D9D9D9"));
                     break;
                 case "_tilde":
                     _tilde.setIcon(new ImageIcon(image));
                     _tilde.setOpaque(true);
+                    _tilde.setBackground(Color.decode("#D9D9D9"));
                     break;
                 case "_brac_round_end":
                     _brac_round_end.setIcon(new ImageIcon(image));
                     _brac_round_end.setOpaque(true);
+                    _brac_round_end.setBackground(Color.decode("#D9D9D9"));
                     break;
                 case "_brac_round_start":
                     _brac_round_start.setIcon(new ImageIcon(image));
                     _brac_round_start.setOpaque(true);
+                    _brac_round_start.setBackground(Color.decode("#D9D9D9"));
                     break;
                 case "_greaterthan":
                     _greaterthan.setIcon(new ImageIcon(image));
                     _greaterthan.setOpaque(true);
+                    _greaterthan.setBackground(Color.decode("#D9D9D9"));
                     break;
                 case "_lessthan":
                     _lessthan.setIcon(new ImageIcon(image));
                     _lessthan.setOpaque(true);
+                    _lessthan.setBackground(Color.decode("#D9D9D9"));
                     break;
                 case "_slash":
                     _slash.setIcon(new ImageIcon(image));
                     _slash.setOpaque(true);
+                    _slash.setBackground(Color.decode("#D9D9D9"));
                     break;
                 case "_toPower":
                     _toPower.setIcon(new ImageIcon(image));
                     _toPower.setOpaque(true);
+                    _toPower.setBackground(Color.decode("#D9D9D9"));
                     break;
                 case "_atharet":
                     _atharet.setIcon(new ImageIcon(image));
                     _atharet.setOpaque(true);
+                    _atharet.setBackground(Color.decode("#D9D9D9"));
                     break;
                 case "_question":
                     _question.setIcon(new ImageIcon(image));
                     _question.setOpaque(true);
+                    _question.setBackground(Color.decode("#D9D9D9"));
                     break;
                 case "_exclamation":
                     _exclamation.setIcon(new ImageIcon(image));
                     _exclamation.setOpaque(true);
+                    _exclamation.setBackground(Color.decode("#D9D9D9"));
                     break;
                 case "_colon":
                     _colon.setIcon(new ImageIcon(image));
                     _colon.setOpaque(true);
+                    _colon.setBackground(Color.decode("#D9D9D9"));
                     break;
                 case "_comma":
                     _comma.setIcon(new ImageIcon(image));
                     _comma.setOpaque(true);
+                    _comma.setBackground(Color.decode("#D9D9D9"));
                     break;
                 case "_apostrophe":
                     _apostrophe.setIcon(new ImageIcon(image));
                     _apostrophe.setOpaque(true);
+                    _apostrophe.setBackground(Color.decode("#D9D9D9"));
                     break;
                 case "_backquote":
                     _backquote.setIcon(new ImageIcon(image));
                     _backquote.setOpaque(true);
+                    _backquote.setBackground(Color.decode("#D9D9D9"));
                     break;
                 case "_semicolon":
                     _semicolon.setIcon(new ImageIcon(image));
                     _semicolon.setOpaque(true);
+                    _semicolon.setBackground(Color.decode("#D9D9D9"));
                     break;
                 case "_9":
                     _9.setIcon(new ImageIcon(image));
                     _9.setOpaque(true);
+                    _9.setBackground(Color.decode("#D9D9D9"));
                     break;
                 case "_8":
                     _8.setIcon(new ImageIcon(image));
                     _8.setOpaque(true);
+                    _8.setBackground(Color.decode("#D9D9D9"));
                     break;
                 case "_7":
                     _7.setIcon(new ImageIcon(image));
                     _7.setOpaque(true);
+                    _7.setBackground(Color.decode("#D9D9D9"));
                     break;
                 case "_6":
                     _6.setIcon(new ImageIcon(image));
                     _6.setOpaque(true);
+                    _6.setBackground(Color.decode("#D9D9D9"));
                     break;
                 case "_5":
                     _5.setIcon(new ImageIcon(image));
                     _5.setOpaque(true);
+                    _5.setBackground(Color.decode("#D9D9D9"));
                     break;
                 case "_4":
                     _4.setIcon(new ImageIcon(image));
                     _4.setOpaque(true);
+                    _4.setBackground(Color.decode("#D9D9D9"));
                     break;
                 case "_3":
                     _3.setIcon(new ImageIcon(image));
                     _3.setOpaque(true);
-                    break;
+                    _3.setBackground(Color.decode("#D9D9D9"));break;
                 case "_2":
                     _2.setIcon(new ImageIcon(image));
                     _2.setOpaque(true);
+                    _2.setBackground(Color.decode("#D9D9D9"));
                     break;
                 case "_1":
                     _1.setIcon(new ImageIcon(image));
                     _1.setOpaque(true);
+                    _1.setBackground(Color.decode("#D9D9D9"));
                     break;
                 case "_0":
                     _0.setIcon(new ImageIcon(image));
                     _0.setOpaque(true);
+                    _0.setBackground(Color.decode("#D9D9D9"));
                     break;
                 default:
                     // Handle the case where the symbol is not recognized
@@ -1323,6 +1413,7 @@ class ProcessFrame extends JFrame implements ActionListener {
             String workingDirectory = System.getProperty("user.dir");
             ProcessBuilder pb = new ProcessBuilder("python", scriptName);
             pb.directory(new File(workingDirectory));
+            @SuppressWarnings("unused")
             Process process = pb.start();
             // Uncomment the following line if you want to wait for the script to finish execution
             // process.waitFor();
