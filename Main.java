@@ -151,7 +151,7 @@ class ProcessFrame extends JFrame implements ActionListener {
         add(processButton, BorderLayout.CENTER);
 
         // Create Selected Image Label
-        selectedImage = new JLabel("No image selected");
+        selectedImage = new JLabel("No Image Selected");
         selectedImage.setHorizontalAlignment(JLabel.CENTER);
         selectedImage.setVerticalAlignment(JLabel.CENTER);
         selectedImage.setBounds(15, 187, 500, 762);
@@ -885,7 +885,7 @@ class ProcessFrame extends JFrame implements ActionListener {
             Thread.sleep(1000);
     
             // Uncomment if there's an additional script to execute
-            // executePythonScript("embedder.py");
+            executePythonScript("borderRemover.py");
             publish(100);
     
             return null;

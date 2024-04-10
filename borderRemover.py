@@ -1,53 +1,43 @@
-from PIL import Image
 import os
+import cv2
 
-def remove_black_border(image_path, output_path):
-    """
-    Removes black borders from an image and saves it.
+def crop_and_resize(image_path, size):
+    # Read the image
+    img = cv2.imread(image_path)
+    
+    # Get dimensions of the image
+    h, w = img.shape[:2]
 
-    Parameters:
-        image_path (str): Path to the input image file.
-        output_path (str): Path to save the output image file.
-    """
-    image = Image.open(image_path)
-    image_data = image.getdata()
+    # Calculate dimensions for cropping
+    if h > w:
+        start = 0
+        end = w
+        cropped_img = img[start:end, :]
+    else:
+        start = (w - h) // 2
+        end = start + h
+        cropped_img = img[:, start:end]
 
-    # Find non-black pixels
-    non_black_pixels = [pixel for pixel in image_data if pixel != (0, 0, 0, 255)]
+    # Resize the cropped image to the desired size
+    resized_img = cv2.resize(cropped_img, (size, size))
 
-    # Get bounding box of non-black pixels
-    bbox = image.getbbox()
+    return resized_img
 
-    # Crop the image using the bounding box
-    cropped_image = image.crop(bbox)
-
-    # Save the cropped image
-    cropped_image.save(output_path)
-
-def remove_black_borders_in_folder(input_folder, output_folder):
-    """
-    Removes black borders from all images in a folder.
-
-    Parameters:
-        input_folder (str): Path to the input folder containing images.
-        output_folder (str): Path to save the output images.
-    """
-    # Create the output folder if it doesn't exist
+def process_images(input_folder, output_folder, size):
+    # Ensure the output folder exists
     if not os.path.exists(output_folder):
         os.makedirs(output_folder)
 
-    # Get a list of all image files in the input folder
-    image_files = [f for f in os.listdir(input_folder) if os.path.isfile(os.path.join(input_folder, f))]
+    # Process each image in the input folder
+    for filename in os.listdir(input_folder):
+        if filename.endswith(('.jpg', '.jpeg', '.png')):  # Process only image files
+            input_path = os.path.join(input_folder, filename)
+            output_path = os.path.join(output_folder, filename)
+            resized_img = crop_and_resize(input_path, size)
+            cv2.imwrite(output_path, resized_img)
 
-    # Process each image file
-    for image_file in image_files:
-        input_path = os.path.join(input_folder, image_file)
-        output_path = os.path.join(output_folder, image_file)
-        remove_black_border(input_path, output_path)
-
-# Input and output folder paths
-input_folder = "Output"
-output_folder = "Output_No_Border"
-
-# Remove black borders from images in the input folder and save them to the output folder
-remove_black_borders_in_folder(input_folder, output_folder)
+# Example usage:
+input_folder = 'Output'  # Input folder containing images
+output_folder = 'Output'  # Output folder for resized images
+output_size = 256  # Output size (in pixels) for both width and height
+process_images(input_folder, output_folder, output_size)
