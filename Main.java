@@ -873,19 +873,22 @@ class ProcessFrame extends JFrame implements ActionListener {
             Thread.sleep(1000);
     
             executePythonScript("extractor.py");
-            publish(25);
+            publish(20);
             Thread.sleep(1000);
     
             executePythonScript("removebg.py");
-            publish(50);
+            publish(40);
             Thread.sleep(1000);
     
             executePythonScript("rename.py");
-            publish(75);
+            publish(60);
             Thread.sleep(1000);
     
-            // Uncomment if there's an additional script to execute
             executePythonScript("borderRemover.py");
+            publish(80);
+            Thread.sleep(1000);
+
+            executePythonScript("embedder.py");
             publish(100);
     
             return null;

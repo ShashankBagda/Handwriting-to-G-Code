@@ -1,43 +1,45 @@
 import os
-import cv2
+from PIL import Image
 
-def crop_and_resize(image_path, size):
-    # Read the image
-    img = cv2.imread(image_path)
-    
-    # Get dimensions of the image
-    h, w = img.shape[:2]
+def crop_image_from_border(image_path, crop_px):
+    # Open the image
+    img = Image.open(image_path)
 
-    # Calculate dimensions for cropping
-    if h > w:
-        start = 0
-        end = w
-        cropped_img = img[start:end, :]
-    else:
-        start = (w - h) // 2
-        end = start + h
-        cropped_img = img[:, start:end]
+    # Get image dimensions
+    width, height = img.size
 
-    # Resize the cropped image to the desired size
-    resized_img = cv2.resize(cropped_img, (size, size))
+    # Define crop box (left, upper, right, lower)
+    crop_box = (crop_px, crop_px, width - crop_px, height - crop_px)
 
-    return resized_img
+    # Crop the image
+    cropped_img = img.crop(crop_box)
 
-def process_images(input_folder, output_folder, size):
-    # Ensure the output folder exists
+    return cropped_img
+
+def crop_images_in_folder(input_folder, output_folder, crop_pixels):
+    # Create the output folder if it doesn't exist
     if not os.path.exists(output_folder):
         os.makedirs(output_folder)
 
-    # Process each image in the input folder
+    # Iterate over each file in the input folder
     for filename in os.listdir(input_folder):
-        if filename.endswith(('.jpg', '.jpeg', '.png')):  # Process only image files
-            input_path = os.path.join(input_folder, filename)
-            output_path = os.path.join(output_folder, filename)
-            resized_img = crop_and_resize(input_path, size)
-            cv2.imwrite(output_path, resized_img)
+        if filename.endswith(('.png', '.jpg', '.jpeg')):
+            input_image_path = os.path.join(input_folder, filename)
+            output_image_path = os.path.join(output_folder, filename)
+            
+            # Crop the image
+            cropped_image = crop_image_from_border(input_image_path, crop_pixels)
 
-# Example usage:
-input_folder = 'Output'  # Input folder containing images
-output_folder = 'Output'  # Output folder for resized images
-output_size = 256  # Output size (in pixels) for both width and height
-process_images(input_folder, output_folder, output_size)
+            # Save the cropped image
+            cropped_image.save(output_image_path)
+
+            # Display confirmation message
+            print(f"Image {filename} cropped and saved successfully.")
+
+# Example usage
+input_folder = "Output"  # Input folder containing images to crop
+output_folder = "Output"  # Output folder for cropped images
+crop_pixels = 5  # Number of pixels to crop from each side
+
+# Crop images in the input folder
+crop_images_in_folder(input_folder, output_folder, crop_pixels)
