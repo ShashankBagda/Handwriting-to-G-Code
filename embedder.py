@@ -72,13 +72,14 @@ for char in text:
         output_doc.add_paragraph()
         continue
     elif char == ' ':
-        continue
+        file_name = f"Graphics/space.png"
+        # continue
     elif char.isupper():
         file_name = f"Output/_{char}.png"
-        width = Inches(0.5) 
+        width = Inches(0.3) 
     elif char.islower():
         file_name = f"Output/{char}.png"
-        width = Inches(0.4)  
+        width = Inches(0.2)  
     elif char.isnumeric():
         file_name = f"Output/_{char}.png"
         width = Inches(0.4) 

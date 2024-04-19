@@ -5,7 +5,7 @@ import subprocess
 import shutil
 import time
 
-border_width = 3
+border_width = 2
 
 def delete_files_in_folder(folder_path):
     try:
@@ -26,7 +26,7 @@ def delete_files_in_folder(folder_path):
 def find_squares(image):
     gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
     blurred = cv2.GaussianBlur(gray, (5, 5), 0)
-    edged = cv2.Canny(blurred, 50, 150)
+    edged = cv2.Canny(blurred, 50, 600)
 
     contours, _ = cv2.findContours(edged.copy(), cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
     squares = []
