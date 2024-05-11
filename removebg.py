@@ -10,7 +10,7 @@ def remove_white_background(image_path, output_path):
     data = image.getdata()
 
     new_data = []
-    for item in data:
+    for item in data: # type: ignore
         if item[0] > 200 and item[1] > 200 and item[2] > 200:
             new_data.append((255, 255, 255, 0))  # Set the pixel to transparent
         else:
