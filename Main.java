@@ -175,7 +175,6 @@ class ProcessFrame extends JFrame implements ActionListener {
         setLayout(new BorderLayout());
 
         String imagePath = readBackgroundImagePath();
-        
         setContentPane(new JLabel(new ImageIcon(imagePath)));
 
         backButton = new JButton();
