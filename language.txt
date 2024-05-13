@@ -1,1 +1,1 @@
-Graphics/gujarati.png
+Graphics/english.png
