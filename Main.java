@@ -21,7 +21,7 @@ public class Main extends JFrame implements ActionListener {
         createNew.setBorderPainted(true);
         createNew.setContentAreaFilled(false);
         createNew.addActionListener(this);
-        createNew.setBounds(560, 860, 300, 100);
+        createNew.setBounds(558, 872, 300, 100);
         // Add Create New button to the frame
         add(createNew, BorderLayout.CENTER);
 
@@ -30,7 +30,7 @@ public class Main extends JFrame implements ActionListener {
         existingButton.setBorderPainted(true);
         existingButton.setContentAreaFilled(false);
         existingButton.addActionListener(this);
-        existingButton.setBounds(1060, 860, 300, 100);
+        existingButton.setBounds(1062, 872, 300, 100);
         // Add Existing button to the frame
         add(existingButton, BorderLayout.CENTER);
 

@@ -28,14 +28,14 @@ class ExistingFrame extends JFrame implements ActionListener
         backButton.setBorderPainted(true);
         backButton.setContentAreaFilled(false);
         backButton.addActionListener(this);
-        backButton.setBounds(10, 14, 45, 40);
+        backButton.setBounds(10, 20, 45, 40);
         add(backButton, BorderLayout.CENTER);
 
         processButton = new JButton();
         processButton.setBorderPainted(true);
         processButton.setContentAreaFilled(false);
         processButton.addActionListener(this);
-        processButton.setBounds(708, 750, 500, 120);
+        processButton.setBounds(708, 762, 500, 120);
         add(processButton, BorderLayout.CENTER);
 
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

@@ -28,16 +28,16 @@ class EnglishFrame extends JFrame implements ActionListener {
         setTitle("English Frame");
         setLayout(new BorderLayout());
 
-        String imagePath = readBackgroundImagePath();
+        String imagePath = "Graphics/english.png";
         setContentPane(new JLabel(new ImageIcon(imagePath)));
 
-        backButton = new JButton(); backButton.setBorderPainted(true); backButton.setContentAreaFilled(false); backButton.addActionListener(this); backButton.setBounds(10, 14, 45, 40); add(backButton, BorderLayout.CENTER);
-        selectButton = new JButton(); selectButton.setBorderPainted(true); selectButton.setContentAreaFilled(false); selectButton.addActionListener(this); selectButton.setBounds(665, 865, 200, 110); add(selectButton, BorderLayout.CENTER);
-        processButton = new JButton(); processButton.setBorderPainted(true); processButton.setContentAreaFilled(false); processButton.addActionListener(this); processButton.setBounds(875, 865, 200, 110); add(processButton, BorderLayout.CENTER);
-        reorderButton = new JButton(); reorderButton.setBorderPainted(true); reorderButton.setContentAreaFilled(false); reorderButton.addActionListener(this); reorderButton.setBounds(1080, 865, 200, 110); add(reorderButton, BorderLayout.CENTER);
-        exportButton = new JButton(); exportButton.setBorderPainted(true); exportButton.setContentAreaFilled(false); exportButton.addActionListener(this); exportButton.setBounds(1705, 865, 200, 110); add(exportButton, BorderLayout.CENTER);
-        selectedImage = new JLabel("No Image Selected"); selectedImage.setHorizontalAlignment(JLabel.CENTER); selectedImage.setVerticalAlignment(JLabel.CENTER); selectedImage.setBounds(15, 187, 500, 762); selectedImage.setVisible(true); add(selectedImage, BorderLayout.CENTER);
-        progressBar = new JProgressBar(); progressBar.setStringPainted(true); progressBar.setBounds(1288, 865, 408, 110); add(progressBar, BorderLayout.CENTER);
+        backButton = new JButton(); backButton.setBorderPainted(true); backButton.setContentAreaFilled(false); backButton.addActionListener(this); backButton.setBounds(10, 20, 45, 40); add(backButton, BorderLayout.CENTER);
+        selectButton = new JButton(); selectButton.setBorderPainted(true); selectButton.setContentAreaFilled(false); selectButton.addActionListener(this); selectButton.setBounds(665, 878, 200, 110); add(selectButton, BorderLayout.CENTER);
+        processButton = new JButton(); processButton.setBorderPainted(true); processButton.setContentAreaFilled(false); processButton.addActionListener(this); processButton.setBounds(875, 878, 200, 110); add(processButton, BorderLayout.CENTER);
+        reorderButton = new JButton(); reorderButton.setBorderPainted(true); reorderButton.setContentAreaFilled(false); reorderButton.addActionListener(this); reorderButton.setBounds(1080, 878, 200, 110); add(reorderButton, BorderLayout.CENTER);
+        exportButton = new JButton(); exportButton.setBorderPainted(true); exportButton.setContentAreaFilled(false); exportButton.addActionListener(this); exportButton.setBounds(1705, 878, 200, 110); add(exportButton, BorderLayout.CENTER);
+        selectedImage = new JLabel("No Image Selected"); selectedImage.setHorizontalAlignment(JLabel.CENTER); selectedImage.setVerticalAlignment(JLabel.CENTER); selectedImage.setBounds(15, 200, 500, 762); selectedImage.setVisible(true); add(selectedImage, BorderLayout.CENTER);
+        progressBar = new JProgressBar(); progressBar.setStringPainted(true); progressBar.setBounds(1288, 878, 408, 110); add(progressBar, BorderLayout.CENTER);
 
         // Create Selected Image Label
         
@@ -154,16 +154,6 @@ class EnglishFrame extends JFrame implements ActionListener {
         });
     }
 
-    private String readBackgroundImagePath() {
-        String imagePath = "Graphics/english.png"; // Default path
-        try (BufferedReader reader = new BufferedReader(new FileReader("language.txt"))) {
-            imagePath = reader.readLine().trim();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return imagePath;
-    }
-
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == selectButton) {
             JFileChooser fileChooser = new JFileChooser();
@@ -215,6 +205,7 @@ class EnglishFrame extends JFrame implements ActionListener {
 
                 try {
                     // Wait for reorder.py to finish execution
+                    @SuppressWarnings("deprecation")
                     Process p = Runtime.getRuntime().exec("python reorder.py");
                     if (!p.waitFor(5, TimeUnit.MINUTES)) { // Wait up to 5 minutes
                         System.err.println("Script execution timeout.");
